@@ -1,5 +1,5 @@
 # 使用openjdk8的镜像
-FROM openjdk:8-jre
+FROM openjdk:8
 
 ENV PARAMS="--spring.profiles.active=test"
 

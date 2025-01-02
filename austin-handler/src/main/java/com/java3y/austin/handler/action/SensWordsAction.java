@@ -1,5 +1,6 @@
 package com.java3y.austin.handler.action;
 
+import com.alibaba.fastjson2.JSON;
 import com.java3y.austin.common.domain.TaskInfo;
 import com.java3y.austin.common.dto.model.*;
 import com.java3y.austin.common.pipeline.BusinessProcess;
@@ -48,8 +49,8 @@ public class SensWordsAction implements BusinessProcess<TaskInfo> {
                 break;
             // PUSH
             case 20:
-                PushContentModel pushContentModel =
-                        (PushContentModel) context.getProcessModel().getContentModel();
+//                PushContentModel pushContentModel = (PushContentModel) context.getProcessModel().getContentModel();
+                PushContentModel pushContentModel = JSON.parseObject(JSON.toJSONString(context.getProcessModel().getContentModel()), PushContentModel.class);
                 pushContentModel.setContent(filter(pushContentModel.getContent(), sensDict));
                 break;
             // SMS

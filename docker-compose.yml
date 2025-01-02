@@ -120,8 +120,8 @@ services:
       - JVM_XMX=128m
       - JVM_XMN=128m
     volumes:
-      - /home/nacos/single-logs/nacos-server:/home/nacos/logs
-      - /home/nacos/init.d:/home/nacos/init.d
+      - /Users/lieyan/nacos/single-logs/nacos-server:/home/nacos/logs
+      - /Users/lieyan/nacos/init.d:/home/nacos/init.d
     ports:
       - "8848:8848"
       - "9848:9848"
